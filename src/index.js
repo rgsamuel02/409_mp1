@@ -11,3 +11,59 @@ import './css/main.scss';
 
 // Scripts
 import './js/main.js';
+
+const sections = document.querySelectorAll("header, section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", function () {
+
+    const navbar = document.querySelector("nav");
+
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
+function updateActiveSection() {
+
+    const navbar = document.querySelector("nav");
+    const navbarBottom = navbar.getBoundingClientRect().bottom;
+
+    let currentSection = sections[0];
+
+    sections.forEach(function (section) {
+
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop <= navbarBottom) {
+            currentSection = section;
+        }
+
+    });
+
+    const atBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 5;
+
+    if (atBottom) {
+        currentSection = sections[sections.length - 1];
+    }
+
+    navLinks.forEach(function (link) {
+        link.classList.remove("active");
+    });
+
+    const activeLink = document.querySelector(
+        `.nav-links a[href="#${currentSection.id}"]`
+    );
+
+    if (activeLink) {
+        activeLink.classList.add("active");
+    }
+}
+
+window.addEventListener("scroll", updateActiveSection);
+
+updateActiveSection();

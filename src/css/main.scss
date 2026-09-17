@@ -1,1 +1,402 @@
-/* Your SCSS here. */
+// ========================================
+// SCSS VARIABLES
+// ========================================
+
+$primary-color: #1d3557;
+$secondary-color: #457b9d;
+$light-color: #B3DDF2;
+$dark-color: #1d1d1d;
+$white: #ffffff;
+$red: #E4002B;
+
+$max-width: 1200px;
+$section-padding: 80px;
+
+
+// ========================================
+// GLOBAL STYLES
+// ========================================
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: $dark-color;
+    background-color: $white;
+}
+
+.container {
+    width: 90%;
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+section {
+    width: 100%;
+    padding: $section-padding 0;
+}
+
+section h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 36px;
+}
+
+
+// ========================================
+// NAVBAR
+// ========================================
+
+nav {
+    width: 100%;
+    background-color: $primary-color;
+    color: $white;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: $max-width;
+    margin: 0 auto;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: padding 0.3s ease;
+}
+
+nav.scrolled {
+
+    .nav-container {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+}
+
+.logo {
+    color: $white;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+
+    transition: font-size 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+
+    a {
+        color: $red;
+        text-decoration: none;
+
+        padding: 5px 8px;
+        border-radius: 5px;
+
+        transition:
+            opacity 0.3s ease,
+            font-size 0.3s ease,
+            background-color 0.3s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &.active {
+            background-color: $secondary-color;
+        }
+    }
+}
+
+
+// ========================================
+// HEADER
+// ========================================
+
+header {
+    min-height: 500px;
+
+    background-color: $secondary-color;
+    color: $white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 20px;
+
+    font-size: 60px;
+}
+
+header p {
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 1.6;
+    color: $dark-color
+}
+
+
+// ========================================
+// ABOUT SECTION
+// ========================================
+
+#about {
+    background-color: $light-color;
+}
+
+#about p {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    text-align: center;
+    color: $red
+}
+
+
+// ========================================
+// ATTRACTIONS
+// ========================================
+
+#attractions {
+    background-color: $white;
+}
+
+.attraction-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.attraction-card {
+    padding: 30px;
+
+    background-color: $light-color;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.attraction-card h3 {
+    margin-top: 0;
+
+    font-size: 24px;
+    color: $red
+}
+
+.attraction-card p {
+    margin-bottom: 0;
+
+    line-height: 1.6;
+}
+
+
+// ========================================
+// GALLERY / CAROUSEL
+// ========================================
+
+#gallery {
+    background-color: $light-color;
+}
+
+.carousel {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+}
+
+.slide {
+    width: 700px;
+    height: 400px;
+
+    background-color: $primary-color;
+    color: $white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.slide p {
+    font-size: 28px;
+}
+
+.carousel-button {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 10%;
+
+    background-color: $red;
+    color: $white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+
+// ========================================
+// EXPERIENCES
+// ========================================
+
+#experiences {
+    background-color: $white;
+}
+
+.experience-content {
+    text-align: center;
+}
+
+.experience-content p {
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+
+    line-height: 1.7;
+
+    color: $red
+}
+
+.learn-more-button {
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: $primary-color;
+    color: $white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+// ========================================
+// VIDEO
+// ========================================
+
+#video {
+    background-color: $light-color;
+
+    text-align: center;
+}
+
+#video video {
+    display: block;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+// ========================================
+// FOOTER
+// ========================================
+
+footer {
+    padding: 40px 0;
+
+    background-color: $primary-color;
+    color: $white;
+
+    text-align: center;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 10px;
+
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header {
+        min-height: 450px;
+    }
+
+    header h1 {
+        font-size: 42px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    .attraction-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel {
+        gap: 10px;
+    }
+
+    .slide {
+        width: 70vw;
+        height: 300px;
+    }
+
+    .carousel-button {
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+}
