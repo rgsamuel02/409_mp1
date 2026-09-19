@@ -88,7 +88,6 @@ function showSlide(slideNumber) {
     slides[slideNumber].classList.add("active");
 }
 nextButton.addEventListener("click", function () {
-
     currentSlide++;
 
     if (currentSlide >= slides.length) {
@@ -96,11 +95,9 @@ nextButton.addEventListener("click", function () {
     }
 
     showSlide(currentSlide);
-
 });
 
 previousButton.addEventListener("click", function () {
-
     currentSlide--;
 
     if (currentSlide < 0) {
@@ -108,5 +105,26 @@ previousButton.addEventListener("click", function () {
     }
 
     showSlide(currentSlide);
+});
 
+// Modal
+const learnMoreButton =
+    document.querySelector("#learn-more-button");
+
+const modal =
+    document.querySelector("#experience-modal");
+
+const modalClose =
+    document.querySelector("#modal-close");
+
+learnMoreButton.addEventListener("click", function () {
+    modal.classList.add("show");
+});
+modalClose.addEventListener("click", function () {
+    modal.classList.remove("show");
+});
+modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+        modal.classList.remove("show");
+    }
 });

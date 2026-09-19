@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
     <title>Chicago Travel Guide</title>
 </head>
 
@@ -50,7 +54,10 @@
 
         <div class="container">
 
-            <h2>About Chicago</h2>
+            <h2>
+                <i class="fa-solid fa-location-dot"></i>
+                About Chicago
+            </h2>
 
             <p>
                 Chicago is a city known for its architecture,
@@ -73,17 +80,26 @@
             <div class="attraction-grid">
 
                 <div class="attraction-card">
-                    <h3>Millennium Park</h3>
+                    <h3>
+                        <i class="fa-solid fa-tree"></i>
+                        Millennium Park
+                    </h3>
                 </div>
 
 
                 <div class="attraction-card">
-                    <h3>Navy Pier</h3>
+                    <h3>
+                        <i class="fa-solid fa-water"></i>
+                        Navy Pier
+                    </h3>
                 </div>
 
 
                 <div class="attraction-card">
-                    <h3>Chicago Riverwalk</h3>
+                    <h3>
+                        <i class="fa-solid fa-person-walking"></i>
+                        Chicago Riverwalk
+                    </h3>
                 </div>
 
             </div>
@@ -162,7 +178,7 @@
                     Discover experiences throughout Chicago.
                 </p>
 
-                <button class="learn-more-button" type="button">
+                <button class="learn-more-button" id="learn-more-button" type="button">
                     Learn More
                 </button>
 
@@ -172,7 +188,28 @@
 
     </section>
 
+    <!-- Modal -->
+    <div class="modal" id="experience-modal">
+        <div class="modal-content">
+            <button
+                class="modal-close"
+                id="modal-close"
+                type="button"
+            >
+                ×
+            </button>
 
+            <a
+                href="https://www.chicago.gov/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Visit the Official Chicago Website
+            </a>
+
+        </div>
+
+    </div>
     <!-- Video -->
     <section id="video">
 
@@ -191,11 +228,25 @@
 
     <!-- Footer -->
     <footer>
-
         <div class="container">
             <p>Chicago Travel Guide</p>
-        </div>
 
+            <div class="social-icons">
+
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+            </div>
+        </div>
     </footer>
 <script src="index.js"></script>
 </body>
