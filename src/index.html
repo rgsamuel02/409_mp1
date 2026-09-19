@@ -95,26 +95,50 @@
 
     <!-- Gallery / Carousel -->
     <section id="gallery">
-
         <div class="container">
-
             <h2>Gallery</h2>
-
             <div class="carousel">
-
-                <button class="carousel-button" type="button">
+                <button
+                    class="carousel-button"
+                    id="previous-button"
+                    type="button"
+                >
                     ←
                 </button>
 
 
-                <div class="slide">
+                <div class="slide-container">
+                    <div class="slide active">
+                        <img
+                            src="skyline.jpg"
+                            alt="Chicago skyline"
+                        >
+                    </div>
 
-                    <p>Chicago Skyline</p>
+
+                    <div class="slide">
+                        <img
+                            src="bean.jpg"
+                            alt="Millennium Park"
+                        >
+                    </div>
+
+
+                    <div class="slide">
+                        <img
+                            src="pier.jpg"
+                            alt="Navy Pier"
+                        >
+                    </div>
 
                 </div>
 
 
-                <button class="carousel-button" type="button">
+                <button
+                    class="carousel-button"
+                    id="next-button"
+                    type="button"
+                >
                     →
                 </button>
 

@@ -241,21 +241,44 @@ header p {
 }
 
 .slide {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+
+    pointer-events: none;
+}
+
+.slide-container {
+    position: relative;
+
     width: 700px;
     height: 400px;
 
-    background-color: $primary-color;
-    color: $white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
+    overflow: hidden;
 }
 
 .slide p {
     font-size: 28px;
+}
+
+.slide.active {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
 }
 
 .carousel-button {
@@ -273,6 +296,9 @@ header p {
     cursor: pointer;
 }
 
+.carousel-button:hover {
+    transform: scale(1.1);
+}
 
 // ========================================
 // EXPERIENCES
@@ -388,9 +414,16 @@ footer p {
         gap: 10px;
     }
 
-    .slide {
+    .slide-container {
         width: 70vw;
         height: 300px;
+    }
+
+    .carousel-button {
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
     }
 
     .carousel-button {

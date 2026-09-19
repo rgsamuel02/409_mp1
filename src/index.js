@@ -12,6 +12,8 @@ import './css/main.scss';
 // Scripts
 import './js/main.js';
 
+
+// Navbar Settings
 const sections = document.querySelectorAll("header, section");
 const navLinks = document.querySelectorAll(".nav-links a");
 
@@ -67,3 +69,44 @@ function updateActiveSection() {
 window.addEventListener("scroll", updateActiveSection);
 
 updateActiveSection();
+
+// Carousel
+
+const slides = document.querySelectorAll(".slide");
+
+const previousButton = document.querySelector("#previous-button");
+
+const nextButton = document.querySelector("#next-button");
+
+let currentSlide = 0;
+
+function showSlide(slideNumber) {
+    slides.forEach(function (slide) {
+        slide.classList.remove("active");
+    });
+
+    slides[slideNumber].classList.add("active");
+}
+nextButton.addEventListener("click", function () {
+
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+
+});
+
+previousButton.addEventListener("click", function () {
+
+    currentSlide--;
+
+    if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+
+});
